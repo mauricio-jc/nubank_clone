@@ -139,157 +139,157 @@ class _HomeState extends State<Home> {
   }
 
   Widget _homeView() {
-    return Stack(
-      children: [
-        SizedBox(
-          height: MediaQuery.of(context).size.height * 0.66,
-          child: ListView(
-            children: [
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: Card(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        Padding(
-                          padding: EdgeInsets.only(top: 20, bottom: 15),
-                          child: Text("MeuNu2020", style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Color(0xFF9719c6)),),
-                        ),
-                        Text("Nossa retrospectiva chegou para mostrar que juntos, porém separados, nos redescobrimos em 2020.", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                        SizedBox(height: 15),
-                        OutlineButton(
-                          onPressed: () {},
-                          child: Text("Ver minha retro".toUpperCase(), style: TextStyle(color: Color(0xFF9719c6)),),
-                          borderSide: BorderSide(color: Color(0xFF9719c6))
-                        )
-                      ],
-                    ),
-                  )
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: Card(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          leading: Icon(Icons.credit_card),
-                          title: Text("Cartão de Crédito", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.grey),),
-                          contentPadding: EdgeInsets.all(0),
-                        ),
-                        _visible ?
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Fatura atual", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                            SizedBox(height: 10,),
-                            Text("R\$ 156,20", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFF01bdc5)),),
-                            Row(
-                              children: [
-                                Text("Limite disponível ", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                                Text("R\$ 2.643,80", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.green),),
-                              ],
-                            )
-                          ],
-                        ) : _noVisibleValues()
-                      ],
-                    ),
-                  )
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: Card(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          leading: Icon(Icons.monetization_on_outlined),
-                          title: Text("Conta", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.grey),),
-                          contentPadding: EdgeInsets.all(0),
-                        ),
-                        _visible ?
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            Text("Saldo disponível", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                            SizedBox(height: 10,),
-                            Text("R\$ 7.595,15", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
-                          ],
-                        ) : _noVisibleValues()
-                      ],
-                    ),
-                  )
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
-                child: Card(
-                  color: Colors.white,
-                  child: Padding(
-                    padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        ListTile(
-                          leading: CircleAvatar(
-                            backgroundColor: Color(0xFFe6a4ff),
-                            child: Icon(Icons.card_giftcard, color: Color(0xFF9719c6),),
-                          ),
-                          title: Text("Rewards", style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Color(0xFF9719c6)),),
-                          contentPadding: EdgeInsets.all(0),
-                        ),
-                        SizedBox(height: 15),
-                        Text("Apague compras com pontos que nunca expiram.", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
-                        SizedBox(height: 15),
-                        OutlineButton(
-                          onPressed: () {},
-                          child: Text("Conhecer".toUpperCase(), style: TextStyle(color: Color(0xFF9719c6)),),
-                          borderSide: BorderSide(color: Color(0xFF9719c6))
-                        )
-                      ],
-                    ),
-                  )
-                ),
-              ),
-            ],
-          ),
-        ),
-        Align(
-          alignment: Alignment.bottomCenter,
-          child: Container(
-            height: 130,
-
+    return Container(
+      child: Column(
+        children: [
+          Expanded(
             child: ListView(
-              scrollDirection: Axis.horizontal,
               children: [
-                _ItemMenuBottom(Icon(Icons.payments_outlined, color: Colors.white), "Pagar", 15, 5),
-                _ItemMenuBottom(Icon(Icons.person_add_alt, color: Colors.white), "Indicar amigos", 0, 5),
-                _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Transferir", 0, 5),
-                _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Depositar", 0, 5),
-                _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Empréstimos", 0, 5),
-                _ItemMenuBottom(Icon(Icons.credit_card, color: Colors.white), "Cartão Virtual", 0, 5),
-                _ItemMenuBottom(Icon(Icons.phone_android, color: Colors.white), "Recarga de celular", 0, 5),
-                _ItemMenuBottom(Icon(Icons.bar_chart, color: Colors.white), "Ajustar limite", 0, 5),
-                _ItemMenuBottom(Icon(Icons.enhanced_encryption, color: Colors.white), "Bloquear cartão", 0, 5),
-                _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Cobrar", 0, 5),
-                _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Doação", 0, 5),
-                _ItemMenuBottom(Icon(Icons.help_outline, color: Colors.white), "Me ajuda", 0, 15)
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Padding(
+                            padding: EdgeInsets.only(top: 20, bottom: 15),
+                            child: Text("MeuNu2020", style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Color(0xFF9719c6)),),
+                          ),
+                          Text("Nossa retrospectiva chegou para mostrar que juntos, porém separados, nos redescobrimos em 2020.", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                          SizedBox(height: 15),
+                          OutlineButton(
+                            onPressed: () {},
+                            child: Text("Ver minha retro".toUpperCase(), style: TextStyle(color: Color(0xFF9719c6)),),
+                            borderSide: BorderSide(color: Color(0xFF9719c6))
+                          )
+                        ],
+                      ),
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.credit_card),
+                            title: Text("Cartão de Crédito", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.grey),),
+                            contentPadding: EdgeInsets.all(0),
+                          ),
+                          _visible ?
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Fatura atual", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                              SizedBox(height: 10,),
+                              Text("R\$ 156,20", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold, color: Color(0xFF01bdc5)),),
+                              Row(
+                                children: [
+                                  Text("Limite disponível ", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                                  Text("R\$ 2.643,80", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w700, color: Colors.green),),
+                                ],
+                              )
+                            ],
+                          ) : _noVisibleValues()
+                        ],
+                      ),
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTile(
+                            leading: Icon(Icons.monetization_on_outlined),
+                            title: Text("Conta", style: TextStyle(fontSize: 16, fontWeight: FontWeight.normal, color: Colors.grey),),
+                            contentPadding: EdgeInsets.all(0),
+                          ),
+                          _visible ?
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text("Saldo disponível", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                              SizedBox(height: 10,),
+                              Text("R\$ 7.595,15", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold)),
+                            ],
+                          ) : _noVisibleValues()
+                        ],
+                      ),
+                    )
+                  ),
+                ),
+                Padding(
+                  padding: EdgeInsets.fromLTRB(10, 0, 10, 10),
+                  child: Card(
+                    color: Colors.white,
+                    child: Padding(
+                      padding: EdgeInsets.fromLTRB(20, 0, 20, 20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          ListTile(
+                            leading: CircleAvatar(
+                              backgroundColor: Color(0xFFe6a4ff),
+                              child: Icon(Icons.card_giftcard, color: Color(0xFF9719c6),),
+                            ),
+                            title: Text("Rewards", style: TextStyle(fontSize: 20, fontWeight: FontWeight.normal, color: Color(0xFF9719c6)),),
+                            contentPadding: EdgeInsets.all(0),
+                          ),
+                          SizedBox(height: 15),
+                          Text("Apague compras com pontos que nunca expiram.", style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500, color: Colors.grey),),
+                          SizedBox(height: 15),
+                          OutlineButton(
+                            onPressed: () {},
+                            child: Text("Conhecer".toUpperCase(), style: TextStyle(color: Color(0xFF9719c6)),),
+                            borderSide: BorderSide(color: Color(0xFF9719c6))
+                          )
+                        ],
+                      ),
+                    )
+                  ),
+                ),
               ],
             ),
           ),
-        ),
-      ],
+
+          Container(
+            height: 120,
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  _ItemMenuBottom(Icon(Icons.payments_outlined, color: Colors.white), "Pagar", 15, 5),
+                  _ItemMenuBottom(Icon(Icons.person_add_alt, color: Colors.white), "Indicar amigos", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Transferir", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Depositar", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Empréstimos", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.credit_card, color: Colors.white), "Cartão Virtual", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.phone_android, color: Colors.white), "Recarga de celular", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.bar_chart, color: Colors.white), "Ajustar limite", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.enhanced_encryption, color: Colors.white), "Bloquear cartão", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Cobrar", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.monetization_on, color: Colors.white), "Doação", 0, 5),
+                  _ItemMenuBottom(Icon(Icons.help_outline, color: Colors.white), "Me ajuda", 0, 15)
+                ],
+              ),
+            )
+          )
+        ],
+      ),
     );
   }
 
